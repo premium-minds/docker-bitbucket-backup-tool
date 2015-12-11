@@ -1,19 +1,14 @@
 #!/bin/bash
 
-if [ -n "$BITBUCKET_USER" ]; then
-    OPTS="$OPTS -Dbitbucket.user=$BITBUCKET_USER"
-fi
-if [ -n "$BITBUCKET_PASSWORD" ]; then
-    OPTS="$OPTS -Dbitbucket.password=$BITBUCKET_PASSWORD"
-fi
-if [ -n "$BITBUCKET_BASE_URL" ]; then
-    OPTS="$OPTS -Dbitbucket.baseUrl=$BITBUCKET_BASE_URL"
+if [ -n "$JDBC_URL" ]; then
+    OPTS="$OPTS -Djdbc.override=true"
+    OPTS="$OPTS -Djdbc.driver=$JDBC_DRIVER"
+    OPTS="$OPTS -Djdbc.url=$JDBC_URL"
+    OPTS="$OPTS -Djdbc.user=$JDBC_USER"
+    OPTS="$OPTS -Djdbc.password=$JDBC_PASSWORD"
 fi
 if [ -n "$BITBUCKET_HOME" ]; then
     OPTS="$OPTS -Dbitbucket.home=$BITBUCKET_HOME"
-fi
-if [ -n "$BACKUP_HOME" ]; then
-    OPTS="$OPTS -Dbackup.home=$BACKUP_HOME"
 fi
 
 if [[ $# -ne 1 ]]; then
