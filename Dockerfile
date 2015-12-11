@@ -10,8 +10,10 @@ RUN mkdir /opt/bitbucket
 RUN unzip /root/bitbucket-backup-client.zip -d /opt/bitbucket
 RUN mv /opt/bitbucket/bitbucket-backup-client-* /opt/bitbucket/bitbucket-backup-client
 
-ADD run-backup.sh /run-backup
-RUN chmod +x /run-backup
+ADD run-backup.sh /usr/bin/backup
+RUN chmod +x /usr/bin/backup
+ADD run-restore.sh /usr/bin/restore
+RUN chmod +x /usr/bin/restore
 
 WORKDIR /opt/bitbucket
 
@@ -22,4 +24,4 @@ VOLUME /var/atlassian/application-data/bitbucket
 ENV BACKUP_HOME /backups
 ENV BITBUCKET_HOME /var/atlassian/application-data/bitbucket
 
-ENTRYPOINT ["/run-backup"]
+CMD ["backup"]
