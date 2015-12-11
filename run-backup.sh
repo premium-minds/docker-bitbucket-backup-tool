@@ -17,3 +17,4 @@ if [ -n "$BACKUP_HOME" ]; then
 fi
 
 java $OPTS -jar /opt/bitbucket/bitbucket-backup-client/bitbucket-backup-client.jar
+
