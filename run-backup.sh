@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 if [ -n "$BITBUCKET_USER" ]; then
     OPTS="$OPTS -Dbitbucket.user=$BITBUCKET_USER"
