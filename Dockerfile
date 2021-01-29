@@ -3,8 +3,8 @@ MAINTAINER André Camilo <andrejcamilo@gmail.com>
 
 # Download bitbucket backup client
 
-ENV BITBUCKET_BACKUP_CLIENT_VERSION 3.3.4
-ENV VERSION_LINK 300300410
+ENV BITBUCKET_BACKUP_CLIENT_VERSION 3.6.0
+ENV VERSION_LINK 300600000
 
 RUN curl -Lks https://marketplace.atlassian.com/download/apps/1211500/version/${VERSION_LINK} -o /root/bitbucket-backup-client.zip
 RUN mkdir /opt/bitbucket
